@@ -1,0 +1,30 @@
+print("Welcome to the new and improved BMI Calculator \nBMI 2.0")
+
+weight = float(input("What is your weight in kilograms: "))
+height = float(input("What is your height in meters: "))
+
+bmi = weight / height**2
+bmi = round(bmi,2)
+
+'''
+Below 18.5	Underweight
+18.5 – 24.9	Healthy Weight
+25.0 – 29.9	Overweight
+30.0 and Above	Obesity
+'''
+
+if bmi <= 18.5:
+    print(f"Your bmi is {bmi} \nYour bmi is below 18.5, you are underweight!")
+elif bmi <= 24.9:
+    print(f"Your bmi is {bmi} \nYour bmi is between 18.5 and 24.9, your are within the healthy weight range! ")
+elif bmi <= 29.9:
+    print(f"Your bmi is {bmi} \nYour bmi is less between 24.9 and 29.9, you are overweight!")
+elif bmi <= 35:
+    print(f"Your bmi is between 30 and 35, your are obese")
+else:
+    print(f"Your bmi is {bmi} \nYour bmi is over 35 and you are OBEEEESE  BEESSSSE, in fact; \nYou are CLINICALLY "
+          f"OVERWEIGHT! \nLose weight bro!")
+
+
+
+
