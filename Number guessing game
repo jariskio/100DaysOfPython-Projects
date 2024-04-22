@@ -1,0 +1,65 @@
+import random
+
+print("Welcome to the number guessing game!\n\nPick a mode:\nEasy\nMedium\nHard")
+
+userMode = input("Which mode do you pick?").lower()
+
+lives = ''
+
+if userMode == 'easy':
+    lives = 15
+    print("You have selected the easy mode!\nYou have 15 lives!\nI'm thinking of a number, can you guess what it is? ")
+
+elif userMode == 'medium':
+    lives = 10
+    print("You have selected the medium mode!\nYou have 10 lives!\nI'm thinking of a number, can you guess what it is? ")
+
+elif userMode == 'hard':
+    lives = 5
+    print("You have selected the hard mode!\nYou have 5 lives!\nI'm thinking of a number, can you guess what it is? ")
+
+else:
+    print("You have made the wrong selection, try again")
+
+randomNumber = random.randint(1, 100)
+#print(randomNumber)
+
+while lives > 0:
+    
+    userGuess = int(input("Guess...:"))
+    
+    if userGuess == randomNumber:
+        print(f"Hooray! you have guessed my number!\nCongratulations\nYou did it with {lives} lives left")
+        break
+        
+    elif userGuess != randomNumber:
+        lives -= 1
+        print(f"Incorrect Guess\nTry Again\nYou have {lives} lives left")
+        
+        if userGuess > randomNumber:
+            print("Your number is too high!")
+            
+            if userGuess - randomNumber > 25:
+                print("You're Cold though!!")
+                
+            else:
+                print("You're getting warm!")
+                
+        elif userGuess < randomNumber:
+            print("Your number is too low!")
+            
+            if randomNumber - userGuess > 25:
+                print("You're Cold though!!")
+            
+            else:
+                print("You're getting warm!")
+        
+    else:
+        lives -= 1
+        print(f"Incorrect Guess\nTry Again\nYour guess is too high\nYou have {lives} lives left")
+        
+if lives == 0:
+    print(f"You have run out of lives!\nYou have lost the game.Try again next time!\n\nThe correct number was {randomNumber}")
+    
+
+
